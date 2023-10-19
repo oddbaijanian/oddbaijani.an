@@ -27,7 +27,6 @@
 			body = message
 			data = JSON.parse(body.data);
 			spotify = data.d.spotify
-			console.log(spotify)
 			if(data.op == 0) {
 				let spotify_interval;
 				ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
