@@ -7,12 +7,8 @@ description: Binary describes a numbering scheme in which there are only two pos
 thumbnail: https://cdn.discordapp.com/attachments/1144428111040106608/1164143495221624832/wallhaven-d6o77l.jpg
 ---
 
-#### **The Lost One, Now and Forever**
-Helplesness over tragedy destroys the ~~Foundation~~ of a mans being.
-The *twirling* whirlwind of Frustration and an unchecked burst of Denial concludes A concoction of untainted terror unleashed upon our world.
-Bitter-Sweetness of Regret fails and fades.
-And Man resorts to an unhinged skeleton of Chaos - Reason Drowns in a bed of contaminated mud,
-A Monstrous despot snatches Reason from its throne of supremacy. 
-The sturdy that faces our long-winded gust of Depravity with Serenity deserves our utmost praise.
-For the instability of a teetering intensity of passion can only be seperated by our most Gracious martyrs.
-Graced with Reason, Tranquility and Understanding.
+A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: typically "0" (zero) and "1" (one).
+
+The base-2 numeral system is a positional notation with a radix of 2. Each digit is referred to as a bit, or binary digit. Because of its straightforward implementation in digital electronic circuitry using logic gates, the binary system is used by almost all modern computers and computer-based devices, as a preferred system of use, over various other human techniques of communication, because of the simplicity of the language and the noise immunity in physical implementation.
+
+Negative numbers are commonly represented in binary using two's complement. 

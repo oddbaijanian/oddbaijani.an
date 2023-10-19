@@ -28,7 +28,7 @@
 </div>
 <div class="w-full flex flex-col items-center min-h-screen mt-4">
 	<div class="relative">
-		<div class="max-w-[45rem] w-[45rem] rounded-b-sm rounded-t-sm h-[20rem] max-h-[20rem] bg-cover bg-[url({frontmatter.thumbnail})]">
+		<div class="max-w-[45rem] w-[45rem] rounded-b-sm rounded-t-sm h-[20rem] max-h-[20rem] bg-cover" style="background-image: url('{frontmatter.thumbnail}');">
 			<div class="w-full h-[10rem] bg-gradient-to-t  from-bgsecondary via-bgsecondary to-transparent bottom-0 rounded-b-sm absolute text-text">
 				<div class="ml-2 absolute bottom-0 text-[1rem] mb-2">
 					<p>{frontmatter.title}</p>
