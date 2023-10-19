@@ -9,7 +9,6 @@
 	let crrntTimeStamp: any;
 	let currentTimeStamp: any;
 	let secondPart: any;
-	let islistening: any;
 	onMount(async () => {
 		const ws: any = new WebSocket('wss://api.lanyard.rest/socket');
 
@@ -35,19 +34,13 @@
 							crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
 							currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
 							secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
-						if(spotify) {
-							if (spotify_interval) clearInterval(spotify_interval)
-						spotify_interval = setInterval(() => {
+						if (spotify_interval) clearInterval(spotify_interval)
+								spotify_interval = setInterval(() => {
 								ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
 								crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
 								currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
 								secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
-							}, 1_000)
-							islistening = true;
-						} else {
-							islistening = false;
-						}
-
+						}, 1_000);
 				}
 			});
 		});
@@ -66,7 +59,7 @@
 	/>
 
 	<p class="text-text mt-2">π</p>
-	{#if islistening}
+	{#if spotify}
 		<div class="flex flex-row items-center p-6 w-max-48  gap-x-4 h-24 m text-text rounded-md justify-center mt-2 ">
 			<img class="rounded-md" src={spotify.album_art_url} height="72" width="72" alt=""> 
 			<div class="flex flex-col items-center gap-x-2 mt-2">
@@ -78,7 +71,7 @@
 			</div>
 
 		</div>
-		{:else if !islistening}
+		{:else}
 		<div class="text-sm text-text mt-2">
 			Not Listening to anything.
 		</div>
