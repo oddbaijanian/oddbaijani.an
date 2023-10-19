@@ -38,7 +38,7 @@
 								ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
 								crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
 								currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
-								secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
+								secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? '0' + ttlLength.getSeconds()  : ttlLength.getSeconds()}`;
 					}, 1_000);
 				}
 			});
