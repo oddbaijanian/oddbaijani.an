@@ -19,9 +19,9 @@
 	<div class="flex flex-col  items-center w-full gap-y-4 justify-center px-72 text-text">
 		{#each data.posts as post }
 			<div class="flex flex-col w-[340px] min-w-[240px] bg-bgsecondary">
-				<img class="rounded-t-sm min-w-[240px] h-[125px]" src="https://cdn.discordapp.com/attachments/1144428111040106608/1164143495221624832/wallhaven-d6o77l.jpg?ex=6542241e&is=652faf1e&hm=f1e5fce4398eeedbe5fa83edeb4ad1e0bca55e1e70d07103590be3a86085c905&" alt="">
+				<img class="rounded-t-sm min-w-[240px] h-[125px]" src={post.thumbnail} alt="">
 				<div class="px-4 py-2">
-					<div class="flex flex-row gap-x-2 mt-2">
+					<div class="flex flex-row gap-x-2 mb-2 mt-2">
 						{#each post.hashtag as  hashtag}
 							<span class="text-center border-[0.5px] p-[4px] text-xs bg-bgsecondary border-[#222222]">
 								<a href="/" class="hover:underline hover:cursor-pointer">
@@ -30,7 +30,7 @@
 							</span>
 						{/each}
 						</div>
-						<p class="text-md font-semibold mt-2">{post.title}</p>
+						<a href="/blog/{post.path}" class="text-md font-semibold mt-8">{post.title}</a>
 						<p class="text-xs text-[#a8a8a8] mt-2 mb-2 font-normal">{post.description}</p>
 					<div class="flex flex-row justify-between mt-10 mb-2 items-center">
 						<div class="flex flex-row items-center">

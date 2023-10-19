@@ -71,8 +71,8 @@
 			<img class="rounded-md" src={spotify.album_art_url} height="72" width="72" alt=""> 
 			<div class="flex flex-col items-center gap-x-2 mt-2">
 				{spotify.artist} - {spotify.song}
-				<p class="text-[#a8a8a8]">
-					0{currentTimeStamp}/0{secondPart}
+				<p class="text-[#a8a8a8] text-sm">
+					{currentTimeStamp}/{secondPart}
 
 				</p>
 			</div>
