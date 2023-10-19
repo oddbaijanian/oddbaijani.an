@@ -8,7 +8,6 @@
 >
 	<a href="/" class="font-bold">odd</a>
 	<div class=" flex gap-10">
-		<a href="/about" class="font-normal">About</a>
 		<a href="/blog" class="font-normal">Blog</a>
 	</div>
 </div>
