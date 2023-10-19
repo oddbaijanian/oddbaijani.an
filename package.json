@@ -13,10 +13,10 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
-		"@sveltejs/adapter-static": "^2.0.0",
 		"@sveltejs/kit": "^1.20.4",
 		"@tailwindcss/typography": "^0.5.10",
 		"@types/js-yaml": "^4.0.6",
+		"@types/ws": "^8.5.8",
 		"autoprefixer": "^10.4.16",
 		"js-yaml": "^4.1.0",
 		"postcss": "^8.4.31",
@@ -33,6 +33,7 @@
 	"dependencies": {
 		"@markdoc/markdoc": "^0.3.2",
 		"p-map": "^6.0.0",
-		"path": "^0.12.7"
+		"path": "^0.12.7",
+		"ws": "^8.14.2"
 	}
 }

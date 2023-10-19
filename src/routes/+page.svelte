@@ -1,15 +1,90 @@
+<script lang="ts">
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+
+	let body: any;
+	let data: any;
+	let spotify: any;
+	let ttlLength: any;
+	let crrntTimeStamp: any;
+	let currentTimeStamp: any;
+	let secondPart: any;
+	let islistening: any;
+	onMount(async () => {
+		const ws: any = new WebSocket('wss://api.lanyard.rest/socket');
+
+		ws.addEventListener('open', () => {
+			console.log('Connected to websocket');
+
+			const initializePayload = {
+				"op": 2,
+				"seq": 1,
+				"d": {
+					"subscribe_to_id": "1149375668057034752"
+				}
+			}
+
+			ws.send(JSON.stringify(initializePayload));
+			ws.addEventListener('message', (message: any) => {
+				body = message
+				data = JSON.parse(body.data);
+				if(data.op == 0) {
+						spotify = data.d.spotify
+						let spotify_interval;
+							ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
+							crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
+							currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
+							secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
+						if(spotify) {
+							if (spotify_interval) clearInterval(spotify_interval)
+						spotify_interval = setInterval(() => {
+								ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
+								crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
+								currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
+								secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
+							}, 1_000)
+							islistening = true;
+						} else {
+							islistening = false;
+						}
+
+				}
+			});
+		});
+
+	});
+
+</script>
+
 <div class="text-texts flex flex-col justify-center items-center min-h-screen w-full">
 	<img
 		src="https://api.lanyard.rest/1149375668057034752.png"
 		height="48"
 		width="128"
 		alt=""
-		class="rounded-full border-2 border-primary border-dashed"
+		class="rounded-full"
 	/>
 
-	<p class="text-text mt-2">oddbaijanian</p>
+	<p class="text-text mt-2">π</p>
+	{#if islistening}
+		<div class="flex flex-row items-center p-6 w-max-48  gap-x-4 h-24 m text-text rounded-md justify-center mt-2 ">
+			<img class="rounded-md" src={spotify.album_art_url} height="72" width="72" alt=""> 
+			<div class="flex flex-col items-center gap-x-2 mt-2">
+				{spotify.artist} - {spotify.song}
+				<p class="text-[#a8a8a8]">
+					0{currentTimeStamp}/0{secondPart}
+
+				</p>
+			</div>
+
+		</div>
+		{:else if !islistening}
+		<div class="text-sm text-text mt-2">
+			Not Listening to anything.
+		</div>
+	{/if}
 	<div
-		class="w-48 h-12 text-text flex flex-row items-center justify-center mt-4 border-2 border-dashed border-primary gap-4"
+		class="w-48 h-12 text-text flex flex-row items-center justify-center mt-4 rounded-md gap-4"
 	>
 		<a
 			href="https://discord.com/users/1149375668057034752"

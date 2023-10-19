@@ -1,9 +1,10 @@
 ---
-title: Flare's Goofy Sex Fantasy
-author: Flare
+title: what's binary, what does it do?
+author: odd
 date: 2023-10-01T19:52:38.022Z
-categories: Sex, Fantasy, Sex Fantasy, Sexy, Strangle, Flare
-description: I would strangle that zigger to death (i'm not a murderer. just sexually) - Flare
+hashtag: coding,cs,tech
+description: Binary describes a numbering scheme in which there are only two possible values for each digit
+thumbnail: https://w.wallhaven.cc/full/dp/wallhaven-dpw9zm.jpg
 ---
 
 #### **The Lost One, Now and Forever**
