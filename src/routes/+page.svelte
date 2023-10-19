@@ -26,19 +26,20 @@
 		ws.addEventListener('message', (message: any) => {
 			body = message
 			data = JSON.parse(body.data);
+			spotify = data.d.spotify
+			console.log(spotify)
 			if(data.op == 0) {
-					spotify = data.d.spotify
-					let spotify_interval;
-						ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
-						crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
-						currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
-						secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
-					if (spotify_interval) clearInterval(spotify_interval)
+				let spotify_interval;
+				ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
+				crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
+				currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
+				secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
+				if (spotify_interval) clearInterval(spotify_interval)
 							spotify_interval = setInterval(() => {
-							ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
-							crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
-							currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
-							secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
+								ttlLength = new Date(spotify.timestamps.end! - spotify.timestamps.start!);
+								crrntTimeStamp = new Date(Date.now() - spotify.timestamps.start!);
+								currentTimeStamp = `${crrntTimeStamp.getMinutes()}:${crrntTimeStamp.getSeconds() < 10 ? '0' + crrntTimeStamp.getSeconds()  : crrntTimeStamp.getSeconds()}`
+								secondPart = `${ttlLength.getMinutes()}:${ttlLength.getSeconds() < 10 ? ttlLength.getSeconds() + '0' : ttlLength.getSeconds()}`;
 					}, 1_000);
 				}
 			});
