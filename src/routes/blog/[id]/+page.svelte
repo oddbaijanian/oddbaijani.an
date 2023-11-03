@@ -26,36 +26,36 @@
 		<a href="/blog" class="font-normal">Blog</a>
 	</div>
 </div>
-<div class="w-full flex flex-col items-center min-h-screen mt-4">
-	<div class="relative">
-		<div class="max-w-[45rem] w-[45rem] rounded-b-sm rounded-t-sm h-[20rem] max-h-[20rem] bg-cover" style="background-image: url('{frontmatter.thumbnail}');">
-			<div class="w-full h-[10rem] bg-gradient-to-t  from-bgsecondary via-bgsecondary to-transparent bottom-0 rounded-b-sm absolute text-text">
-				<div class="ml-2 absolute bottom-0 text-[1rem] mb-2">
-					<p>{frontmatter.title}</p>
-					<div class="flex gap-x-2">
-						{#each hashtags as htag}
-							<span class="text-center border-[0.5px] text-[0.80rem] mt-2 p-[4px] text-[#a8a8a8]  bg-bgsecondary border-[#222222]">
-								{htag}
-							</span>
-						{/each}
-					</div>
-					<p class="text-[.80rem] mt-2 text-text">
-						{frontmatter.date?.toLocaleString()}
-					</p>
-					<p class="text-[.80rem] mt-2 max-w-[25rem] text-[#a8a8a8]">
-						{frontmatter.description}
-					</p>
-			</div>
+<div class="p-8 w-full flex flex-col items-center min-h-screen mt-4">
+	<div class="max-w-45 flex flex-col flex-wrap justify-center">
+		<div class="relative">
+			<div class="flex flex-wrap max-w-[45rem] flex-wrap rounded-b-sm rounded-t-sm h-[20rem] max-h-[20rem] bg-cover" style="background-image: url('{frontmatter.thumbnail}');">
+				<div class="w-full h-[10rem] bg-gradient-to-t  from-bgsecondary via-bgsecondary to-transparent bottom-0 rounded-b-sm absolute text-text">
+					<div class="ml-2 absolute bottom-0 text-[1rem] mb-2">
+						<p>{frontmatter.title}</p>
+						<div class="flex gap-x-2">
+							{#each hashtags as htag}
+								<span class="text-center border-[0.5px] text-[0.80rem] mt-2 p-[4px] text-[#a8a8a8]  bg-bgsecondary border-[#222222]">
+									{htag}
+								</span>
+							{/each}
+						</div>
+						<p class="text-[.80rem] mt-2 text-text">
+							{frontmatter.date?.toLocaleString()}
+						</p>
+						<p class="text-[.80rem] mt-2 max-w-[25rem] text-[#a8a8a8]">
+							{frontmatter.description}
+						</p>
+				</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="flex mt-2 ">
-		<hr class="flex-grow border-t-2 border-t-bgsecondary">
-			<p class="text-text"> Article </p>
-		<hr class="flex-grow border-t-2 border-t-bgsecondary">
-	</div>
-	<div class="rounded-sm bg-bgsecondary mt-2 text-text px-12 py-12 max-w-[45rem] w-[45rem]">
-		{@html html}
+		<div class="text-center mt-2 ">
+				<p class="text-text"> Article </p>
+		</div>
+		<div class="flex flex-wrap rounded-sm bg-bgsecondary mt-2 text-text px-12 py-12 max-w-[45rem]">
+			{@html html}
+		</div>
 	</div>
 </div>
 

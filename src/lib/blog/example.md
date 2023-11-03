@@ -4,7 +4,7 @@ author: odd
 date: 2023-10-01T19:52:38.022Z
 hashtag: coding,cs,tech
 description: Binary describes a numbering scheme in which there are only two possible values for each digit
-thumbnail: https://cdn.discordapp.com/attachments/1144428111040106608/1164143495221624832/wallhaven-d6o77l.jpg
+thumbnail: https://cdn.discordapp.com/attachments/1169944099747549224/1169944162011983872/mt.jpg
 ---
 
 A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: typically "0" (zero) and "1" (one).
