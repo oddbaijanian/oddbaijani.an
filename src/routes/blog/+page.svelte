@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="flex justify-between px-8 text-text min-w-screen h-10 items-center bg-bgsecondary shadow-xl"
+	class="flex flex-wrap justify-between px-8 text-text min-w-screen h-10 items-center bg-bgsecondary shadow-xl"
 >
 	<a href="/" class="font-bold">odd</a>
 	<div class=" flex gap-10">

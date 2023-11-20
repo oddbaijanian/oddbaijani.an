@@ -58,6 +58,7 @@
 	/>
 
 	<p class="text-text mt-2">deniz</p>
+	<p class="text-[#a8a8a8] text-sm">Bazı hesaplar mahşere kaldı.</p>
 	{#if spotify}
 		<div class="flex flex-row items-center p-6 w-max-48  gap-x-4 h-24 m text-text rounded-md justify-center mt-2 ">
 			<img class="rounded-md" src={spotify.album_art_url} height="72" width="72" alt=""> 
